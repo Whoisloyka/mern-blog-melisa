@@ -3,7 +3,7 @@
   margin: 20px;
   height: fit-content;
   padding-bottom: 30px;
-  background-color: #ddd;
+  background-color: #fafafa;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@
 .sidebarListItem {
   display: inline-block;
   width: 50%;
-  margin-top: 15px;
+  margin-bottom: 15px;
   cursor: pointer;
 }
 
