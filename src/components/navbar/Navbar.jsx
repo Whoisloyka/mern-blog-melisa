@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="navCenter">
             <ul className='navList'>
                 <li className='navListItem'><Link to="/" className='link'>Anasayfa</Link></li>
-                <li className='navListItem'><Link to="/" className='link'>Yazılarım</Link></li>
+                <li className='navListItem'><Link to="/posts" className='link'>Yazılarım</Link></li>
                 <li className='navListItem'><Link to="/" className='link'>İletişim</Link></li>
                 <li className='navListItem'>
                   {

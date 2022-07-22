@@ -1,11 +1,13 @@
 .write {
   padding-top: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .writeImg {
-  margin-left: 150px;
   width: 70vw;
   height: 250px;
+  align-self: center;
   border-radius: 10px;
   object-fit: contain;
 }
@@ -18,7 +20,7 @@
 }
 
 .writeFormGroup {
-  width: 1000px;
+  width: 900px;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -26,8 +28,21 @@
 
 .writeFormEditor {
   /* max-width: 1000px; */
-  width: 1000px;
+  width: 900px;
   margin: 10px auto;
+}
+
+.editorClassName {
+  border-top: 1px solid #999;
+  margin: 10px 0;
+  /* border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; */
+}
+
+.wrapperClassName {
+  border: 1px solid #999;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .writeIcon {

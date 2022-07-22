@@ -7,6 +7,7 @@ import Setting from "./pages/settings/Setting";
 import Home from "./pages/home/Home";
 import Write from "./pages/write/Write";
 import Single from "./pages/single/Single";
+import Posts from "./components/posts/Posts";
 // import TextEditor from "./components/textEditor/TextEditor";
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
         <Route path="/login">{user ? <Home /> : <Login />}</Route>
         <Route path="/register">{user ? <Home /> : <Register />}</Route>
         <Route path="/settings">{user ? <Setting /> : <Login />}</Route>
+        <Route path="/posts">
+          <Posts />
+        </Route>
       </Switch>
     </Router>
   );
