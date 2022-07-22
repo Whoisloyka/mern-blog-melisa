@@ -1,4 +1,5 @@
 import './write.css'
+import TextEditor from '../../components/textEditor/TextEditor'
 
 export default function Write() {
   return (
@@ -12,8 +13,9 @@ export default function Write() {
           <input type="file" id='fileInput' style={{display:'none'}}/>
           <input type="text" placeholder='Başlık' className='writeInput' autoFocus={true}/>
         </div>
-        <div className="writeFormGroup">
-          <textarea placeholder="Melisa Tekeli'nin çok satan hikayeleri." type='text' className='writeInput writeText'></textarea>
+        <div className="writeFormEditor">
+          {/* <textarea placeholder="Melisa Tekeli'nin çok satan hikayeleri." type='text' className='writeInput writeText'></textarea> */}
+      <TextEditor/>
         </div>
         <button className='writeSubmit'>Yayınla</button>
       </form>

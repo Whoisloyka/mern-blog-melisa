@@ -12,12 +12,22 @@
 
 .writeForm {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .writeFormGroup {
-  margin-left: 150px;
+  width: 1000px;
+  justify-content: center;
   display: flex;
   align-items: center;
+}
+
+.writeFormEditor {
+  /* max-width: 1000px; */
+  width: 1000px;
+  margin: 10px auto;
 }
 
 .writeIcon {
