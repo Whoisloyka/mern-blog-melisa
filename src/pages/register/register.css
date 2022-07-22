@@ -1,5 +1,5 @@
-.login {
-  height: calc(100vh - 50px);
+.register {
+  height: calc(100vh - 40px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,28 +13,28 @@
   background-size: cover;
 }
 
-.loginTitle {
+.registerTitle {
   font-size: 30px;
 }
 
-.loginForm {
+.registerForm {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.loginForm > label {
+.registerForm > label {
   margin: 10px 0;
 }
 
-.loginInput {
+.registerInput {
   padding: 10px;
   border: none;
   background-color: white;
   border-radius: 5px;
 }
 
-.loginButton {
+.registerButton {
   margin: 20px 0;
   padding: 10px 0;
   border: none;
@@ -44,7 +44,7 @@
   color: white;
 }
 
-.loginRegisterButton {
+.registerLoginButton {
   position: absolute;
   top: 60px;
   right: 20px;
