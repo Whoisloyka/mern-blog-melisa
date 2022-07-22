@@ -1,0 +1,8 @@
+.login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("https://www.pexels.com/tr-tr/fotograf/kutuphane-icinde-isik-590493/");
+}

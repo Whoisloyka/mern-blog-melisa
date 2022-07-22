@@ -1,5 +1,5 @@
 import "./setting.css" 
-import Sidebar from "../../sidebar/Sidebar"
+import Sidebar from "../../components/sidebar/Sidebar"
 
 export default function Setting() {
   return (
@@ -24,7 +24,7 @@ export default function Setting() {
           <input type="email" placeholder="melisatekeli000@gmail.com" name="email" />
           <label>Şifre</label>
           <input type="password" placeholder="Password" name="password" />
-          <button className="settingsSubmitButton" type="submit">
+          <button className="settingsSubmit" type="submit">
             Kaydet
           </button>
           </form>
