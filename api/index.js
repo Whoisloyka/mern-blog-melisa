@@ -1,24 +1,21 @@
-const express = require("express")
-const app = express()
-const dotenv = require("dotenv")
-const mongoose = require("mongoose")
-const authRoute = require("./routes/auth")
+const express = require("express");
+const app = express();
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const authRoute = require("./routes/auth");
 
 dotenv.config();
 app.use(express.json());
 
-mongoose
-.connect(process.env.MONGO_URL,{
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-    // useCreateIndex: true
-}).then(console.log("You are connected 2 MongoDB"))
-.catch((err) => console.log(err));
+mongoose.connect(process.env.MONGO_URL, (err) => {
+  if (err) throw err;
+  console.log("Connected to MongoDB!!!");
+});
 
-app.use("/api/auth",authRoute)
+app.use("/api/auth", authRoute);
 
-app.listen("5000",() =>{
-console.log("Backend is running well")
-})
+app.listen("5000", () => {
+  console.log("Backend is running well");
+});
 
 // LOGIN
