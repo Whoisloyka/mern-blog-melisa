@@ -6,8 +6,8 @@ export default function Single() {
   return (
     <div className="single">
       <div className="singleWrapper">
-      <SinglePost />
-      {/* <Sidebar /> */}
+        <SinglePost />
+        {/* <Sidebar /> */}
       </div>
     </div>
   );
