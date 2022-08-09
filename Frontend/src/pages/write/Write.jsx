@@ -1,32 +1,70 @@
 import "./write.css";
 import TextEditor from "../../components/textEditor/TextEditor";
+import axios from "axios"
+import { useContext, useState } from "react";
+import { Context } from "../../context/Context"
+
+
 
 export default function Write() {
+  const [title,setTitle] = useState("")
+  const [desc,setDesc] = useState("")
+  const [file,setFile] = useState(null)
+  const {user} = useContext(Context)
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const newPost = {
+    username:user.username,
+    title,
+    desc,
+  }
+  if(file){
+    const data = new FormData();
+    const filename = Date.now() + file.name;
+    data.append("name",filename)
+    data.append("file",file)
+    newPost.photo = filename;
+    try {
+      await axios.post("/upload", data)
+    } catch (err) {}
+  }
+  try{
+    const res = await axios.post("/posts",newPost);
+    window.location.replace("/post/"+res.data._id)
+  } catch (err){}
+}
   return (
     <div className="write">
-      <img
+      { file && (
+        <img
         className="writeImg"
-        src="https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        src={URL.createObjectURL(file)}
         alt=""
-      />
-      <form className="writeForm">
+      />)}
+      <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
             <i class="writeIcon fa-solid fa-plus"></i>
           </label>
-          <input type="file" id="fileInput" style={{ display: "none" }} />
+          <input type="file" id="fileInput" style={{ display: "none" }}
+          onChange={e=> setFile(e.target.files[0])}
+          />
           <input
             type="text"
             placeholder="Başlık"
             className="writeInput"
             autoFocus={true}
+            onChange={e=>setTitle(e.target.value)}
           />
         </div>
-        <div className="writeFormEditor">
-          {/* <textarea placeholder="Melisa Tekeli'nin çok satan hikayeleri." type='text' className='writeInput writeText'></textarea> */}
-          <TextEditor />
+        <div className="writeFormGroup">
+          {/* <input type="text" placeholder="Yazının kısa özeti" /> */}
+          <textarea placeholder="Melisa Tekeli'nin çok satan hikayeleri." type='text' className='writeInput writeText' onChange={e=>setDesc(e.target.value)}></textarea>
+          {/* <TextEditor className='writeInput writeText'onChange={e=>setDesc(e.target.value)}/> */}
         </div>
-        <button className="writeSubmit">Yayınla</button>
+        <button className="writeSubmit" type="submit">Yayınla</button>
       </form>
     </div>
   );

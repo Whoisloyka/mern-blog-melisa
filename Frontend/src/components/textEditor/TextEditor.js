@@ -16,7 +16,10 @@ export default class TextEditor extends Component {
   };
   render() {
     const { editorState } = this.state;
-    console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())));
+    // console.log(editorState.getCurrentContent())
+    var text = (convertToRaw(editorState.getCurrentContent()).blocks.map((block)=> {return block.text.toString()}));
+    // var text = (draftToHtml(convertToRaw(editorState.getCurrentContent())));
+    console.log(text)
     return (
       <div>
         <Editor

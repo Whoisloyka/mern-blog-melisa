@@ -11,7 +11,7 @@ export default function Login() {
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post("/auth/login", {

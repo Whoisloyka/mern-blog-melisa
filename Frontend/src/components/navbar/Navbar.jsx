@@ -51,8 +51,7 @@ export default function Navbar() {
           <Link className="link" to="/settings">
             <img
               className="navImg"
-              src="https://randomuser.me/api/portraits/men/11.jpg"
-              p
+              src={user.profilePic}
               alt="user"
             />
           </Link>
