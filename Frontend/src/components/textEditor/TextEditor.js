@@ -3,6 +3,8 @@ import { Editor } from "react-draft-wysiwyg";
 import { convertToRaw, EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import draftToHtml from "draftjs-to-html";
+import "./textEditor.css"
+
 
 export default class TextEditor extends Component {
   state = {
@@ -17,8 +19,9 @@ export default class TextEditor extends Component {
   render() {
     const { editorState } = this.state;
     // console.log(editorState.getCurrentContent())
-    var text = (convertToRaw(editorState.getCurrentContent()).blocks.map((block)=> {return block.text.toString()}));
+    // var text = (convertToRaw(editorState.getCurrentContent()).blocks.map((block)=> {return block.text.toString()}));
     // var text = (draftToHtml(convertToRaw(editorState.getCurrentContent())));
+    var text = convertToRaw(editorState.getCurrentContent()).blocks.map((block)=> {return block.text.toString()})
     console.log(text)
     return (
       <div>

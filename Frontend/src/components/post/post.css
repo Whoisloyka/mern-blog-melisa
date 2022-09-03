@@ -1,4 +1,55 @@
 .post {
+  /* display: inline-grid; */
+  cursor: pointer;
+  position: relative;
+  /* height: 400px;
+  width: 400px; */
+  text-align: center;
+  box-shadow: 2px  #777;
+  border-radius: 0.5em;
+}
+
+.post img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /* border: 1px #000 solid; */
+  /* border-radius: 0.5em; */
+}
+
+.postInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  transition: opacity 0.2s ease-in;
+  opacity: 0;
+  color: #fff;
+}
+.post:hover .postInfo {
+  opacity: 1;
+}
+
+.postDesc {
+  width: 70%;
+  margin: -25px auto;
+  font-size: 18px;
+  font-family: monospace;
+  text-overflow: ellipsis;
+}
+
+
+.postCat {
+  
+}
+/* .post {
   width: 385px;
   margin: 15px 25px 40px 25px;
 }
@@ -26,16 +77,22 @@
   cursor: pointer;
 }
 
-.postTitle {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 7px;
-  cursor: pointer;
-}
-
 .postDate {
   font-family: "Lora", serif;
   font-style: italic;
   font-size: 13px;
+} */
+.postTitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  /* margin-top: -27px; */
+  cursor: pointer;
+  /* position: absolute; */
+  /* bottom: 20px; */
+
+}
+
+.postTitleBottom {
+  
 }

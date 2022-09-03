@@ -20,8 +20,10 @@
 }
 
 .writeFormGroup {
+  padding-top: 25px;
   width: 900px;
   justify-content: center;
+  flex-direction: column;
   display: flex;
   align-items: center;
 }
@@ -63,6 +65,7 @@
   border: none;
   padding: 20px;
   width: 70vw;
+  display: block;
 }
 
 .writeInput:focus {
@@ -75,8 +78,8 @@
 
 .writeSubmit {
   position: absolute;
-  top: 20px;
-  right: 0;
+  bottom: 0;
+  right: 20rem;
   color: white;
   background-color: teal;
   padding: 10px;
@@ -85,3 +88,8 @@
   cursor: pointer;
   font-size: 16px;
 }
+
+.DraftEditor-root {
+  padding: 10px;
+}
+

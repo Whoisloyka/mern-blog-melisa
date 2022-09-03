@@ -38,6 +38,23 @@
   outline: none;
 }
 
+.singlePostContent{
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.singlePostContentInput{
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+  border: none;
+}
+
+.singlePostContentInput:focus{
+  outline: none;
+}
+
 .singlePostEdit {
   float: right;
   font-size: 16px;

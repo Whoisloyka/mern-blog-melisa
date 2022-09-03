@@ -9,6 +9,7 @@ import Write from "./pages/write/Write";
 import Single from "./pages/single/Single";
 import Posts from "./components/posts/Posts";
 import { Context, ContextProvider } from "./context/Context";
+import AllPosts from "./pages/allPosts/AllPosts";
 
 // import TextEditor from "./components/textEditor/TextEditor";
 
@@ -25,6 +26,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/write">{user ? <Write /> : <Home />}</Route>
+        <Route path="/allPosts"><AllPosts/></Route>
         <Route path="/post/:postId">
           <Single />
         </Route>

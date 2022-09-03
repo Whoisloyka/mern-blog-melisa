@@ -12,6 +12,7 @@ export default function SinglePost() {
   const {user} = useContext(Context)
   const [title,setTitle] = useState("")
   const [desc,setDesc] = useState("")
+  const [content,setContent] = useState("")
   const [updateMode,setUpdateMode] = useState(false)
 
 
@@ -21,6 +22,7 @@ export default function SinglePost() {
       setPost(res.data);
       setTitle(res.data.title)
       setDesc(res.data.desc)
+      setContent(res.data.content)
     };
     getPost();
   }, [path]);
@@ -85,6 +87,9 @@ export default function SinglePost() {
         </div>
         {updateMode ? <textarea className="singlePostDescInput" value={desc} onChange={(e)=>setDesc(e.target.value)}/> :
         (<p className="singlePostDesc">{post.desc}</p>)
+        }{
+          updateMode ? <textarea className="singlePostContentInput" value={content} onChange={(e)=>setContent(e.target.value)}/> :
+          <div className="singlePostContent">{post.content}</div> 
         }
         {
         updateMode ?  

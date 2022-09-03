@@ -3,6 +3,7 @@
   font-family: "Lora", serif;
   display: flex;
   justify-content: space-between;
+  height: 100vh;
 }
 
 .headerTitles {
@@ -18,22 +19,48 @@
 
 .headerTitleSm {
   font-weight: 400;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .headerTitleLg {
-  font-size: 40px;
+  font-size: 50px;
+  margin-left: 50px;
+  font-weight: 500;
 }
 
 .headerImg {
   object-fit: cover;
-  height: 92vh;
+  height: 100vh;
   width: 100%;
-  border-radius: 3px;
+  border-top-left-radius: 3px;
 }
 
 .headerImgWrapper {
   display: flex;
   justify-content: flex-end;
   width: 43%;
+}
+
+@media (max-width:500px) {
+  .headerImg{
+    display: none !important;
+  }
+  .headerTitles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lora", serif;
+    color: #444;
+    width: 50%;
+    height: 
+    20vh;
+  }
+  .headerImgWrapper {
+    display: none !important;
+  }
+  .header{
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -17,7 +17,18 @@ export default function Sidebar() {
 
   return (
     <div className='sidebar'>
-        <div className="sidebarItem">
+      <h2 className="sidebarTitle">KATEGORİLER</h2>
+      <div className="categoriesWrapper">
+
+        <ul className='categories'>
+              {cats.map((c)=> (
+                <Link to={`/allPosts/?cat=${c.name}`}className="link">
+              <li className='category'>{c.name}</li>    
+                </Link>
+              ))}
+          </ul>
+      </div>
+        {/* <div className="sidebarItem">
           <div className="sidebarTitle">HAKKIMDA</div>
           <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="" />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, architecto? Aliquam a ipsa, quae facere deleniti dolorem assumenda delectus tempora, minus quidem quod cumque aperiam magni, modi voluptate itaque odio.</p>
@@ -39,7 +50,7 @@ export default function Sidebar() {
             <i className="sidebarIcon fa-brands fa-spotify"></i>{'\u00A0'}
             <i className="sidebarIcon fa-solid fa-w"></i>
           </div>
-        </div>
+        </div> */}
     </div>
   )
 }

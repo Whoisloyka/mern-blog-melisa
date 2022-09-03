@@ -1,0 +1,9 @@
+.wrapperClassName {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+}
+
+.editorClassName {
+    padding: 20px;
+}

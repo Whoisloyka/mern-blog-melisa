@@ -10,6 +10,7 @@ export default function Write() {
   const [title,setTitle] = useState("")
   const [desc,setDesc] = useState("")
   const [file,setFile] = useState(null)
+  const [content,setContent] = useState([])
   const {user} = useContext(Context)
 
 const handleSubmit = async (e) => {
@@ -19,6 +20,7 @@ const handleSubmit = async (e) => {
     username:user.username,
     title,
     desc,
+    content,
   }
   if(file){
     const data = new FormData();
@@ -29,11 +31,13 @@ const handleSubmit = async (e) => {
     try {
       await axios.post("/upload", data)
     } catch (err) {}
-  }
+  } else{
   try{
     const res = await axios.post("/posts",newPost);
     window.location.replace("/post/"+res.data._id)
-  } catch (err){}
+  } catch (err){
+    console.log(err)
+  }}
 }
   return (
     <div className="write">
@@ -60,9 +64,9 @@ const handleSubmit = async (e) => {
           />
         </div>
         <div className="writeFormGroup">
-          {/* <input type="text" placeholder="Yazının kısa özeti" /> */}
-          <textarea placeholder="Melisa Tekeli'nin çok satan hikayeleri." type='text' className='writeInput writeText' onChange={e=>setDesc(e.target.value)}></textarea>
-          {/* <TextEditor className='writeInput writeText'onChange={e=>setDesc(e.target.value)}/> */}
+          <input type="text" placeholder="Yazının kısa özeti" className="writeInput" onChange={e=>setDesc(e.target.value)}/>
+          {/* <textarea placeholder="Melisa Tekeli'nin çok satan hikayeleri." type='text' className='writeInput writeText' onChange={e=>setDesc(e.target.value)}></textarea> */}
+          <TextEditor className='writeInput writeText' onChange={e=>setContent(e.target.value)}/>
         </div>
         <button className="writeSubmit" type="submit">Yayınla</button>
       </form>
